@@ -599,16 +599,16 @@ body {
 .team-grid {
   display: flex;
   justify-content: center;
-  gap: 36px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 .team-card {
   background: white;
   border-radius: 22px;
-  padding: 30px 26px;
+  padding: 26px 22px;
   border: 1.5px solid rgba(123,47,190,.1);
   text-align: center;
-  width: 260px;
+  width: 220px;
   transition: transform .2s, box-shadow .2s;
 }
 .team-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(123,47,190,.12); }
@@ -628,6 +628,17 @@ body {
 .team-photo img {
   width: 100%; height: 100%;
   object-fit: cover;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+.team-photo { position: relative; }
+.photo-fallback {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 .team-name {
   font-size: 1.05rem;
@@ -1224,8 +1235,8 @@ body {
   <div class="nav-logo">Ink<span class="dot">riz</span></div>
   <div class="nav-links">
     <button class="nav-link active" onclick="goToSlide(0)">Notre concept</button>
-    <button class="nav-link" onclick="goToSlide(7)">Nos plateformes</button>
-    <button class="nav-link" onclick="goToSlide(13)">Nous contacter</button>
+    <button class="nav-link" onclick="goToSlide(10)">Nos plateformes</button>
+    <button class="nav-link" onclick="goToSlide(15)">Nous contacter</button>
   </div>
   <div class="nav-menu">
     <span></span><span></span><span></span>
@@ -1252,7 +1263,7 @@ body {
   <div class="hero-title-sub">DIGITALE</div>
   <p class="hero-tagline">Automatisez vos processus métier, libérez votre équipe des tâches répétitives et pilotez votre croissance grâce à l'IA et la data.</p>
   <div class="hero-cta">
-    <button class="btn-primary" onclick="goToSlide(13)">Prendre rendez-vous</button>
+    <button class="btn-primary" onclick="goToSlide(15)">Prendre rendez-vous</button>
     <button class="btn-secondary" onclick="navigate(1)">Découvrir →</button>
   </div>
   <div class="hero-scroll">
@@ -1376,11 +1387,14 @@ body {
 <section class="slide" id="s6">
   <div class="s6-header">
     <h2>La digitalisation au service de la performance</h2>
-    <p>Trois experts complémentaires, une vision commune : automatiser ce qui freine votre croissance.</p>
+    <p>Quatre experts complémentaires, une vision commune : automatiser ce qui freine votre croissance.</p>
   </div>
   <div class="team-grid">
     <div class="team-card">
-      <div class="team-photo" style="background: linear-gradient(135deg,#2D1B69,#7B2FBE);">T</div>
+      <div class="team-photo" style="background: linear-gradient(135deg,#2D1B69,#7B2FBE);">
+        <img src="assets/tanguy.jpg" alt="Tanguy Vannier" onerror="this.style.display='none'">
+        <span class="photo-fallback">T</span>
+      </div>
       <div class="team-name">Tanguy Vannier</div>
       <div class="team-role">Transformation digitale</div>
       <div class="team-email">tanguy@inkriz.fr</div>
@@ -1391,7 +1405,10 @@ body {
       </div>
     </div>
     <div class="team-card">
-      <div class="team-photo" style="background: linear-gradient(135deg,#5B21B6,#A855F7);">M</div>
+      <div class="team-photo" style="background: linear-gradient(135deg,#5B21B6,#A855F7);">
+        <img src="assets/majid.jpg" alt="Majid Taibi" onerror="this.style.display='none'">
+        <span class="photo-fallback">M</span>
+      </div>
       <div class="team-name">Majid Taibi</div>
       <div class="team-role">Marketing digital</div>
       <div class="team-email">majid@inkriz.fr</div>
@@ -1402,7 +1419,10 @@ body {
       </div>
     </div>
     <div class="team-card">
-      <div class="team-photo" style="background: linear-gradient(135deg,#4C1D95,#6D28D9);">L</div>
+      <div class="team-photo" style="background: linear-gradient(135deg,#4C1D95,#6D28D9);">
+        <img src="assets/louis.jpg" alt="Louis Rouby" onerror="this.style.display='none'">
+        <span class="photo-fallback">L</span>
+      </div>
       <div class="team-name">Louis Rouby</div>
       <div class="team-role">Data & IA</div>
       <div class="team-email">louis@inkriz.fr</div>
@@ -1412,36 +1432,113 @@ body {
         <span class="team-tag">Data</span>
       </div>
     </div>
+    <div class="team-card">
+      <div class="team-photo" style="background: linear-gradient(135deg,#065F46,#059669);">
+        <img src="assets/valentin.jpg" alt="Valentin" onerror="this.style.display='none'">
+        <span class="photo-fallback">V</span>
+      </div>
+      <div class="team-name">Valentin</div>
+      <div class="team-role">Commercial Tech & GTM</div>
+      <div class="team-email">valentin@inkriz.fr</div>
+      <div class="team-tags">
+        <span class="team-tag">Sales</span>
+        <span class="team-tag">GTM</span>
+        <span class="team-tag">Partnerships</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ── SLIDE 7 : CHIFFRES CLÉS ── -->
 <section class="slide" id="s7">
-  <div class="s7-title">Des résultats mesurables</div>
-  <p class="s7-sub">Ce que nos clients gagnent concrètement après un projet Inkriz</p>
+  <div class="s7-title">Inkriz en chiffres</div>
+  <p class="s7-sub">Une croissance solide, des clients publics et privés qui nous font confiance</p>
   <div class="kpi-grid">
     <div class="kpi-card">
-      <div class="kpi-icon">⏱</div>
-      <div class="kpi-num">-60%</div>
-      <div class="kpi-label">de temps passé sur les tâches administratives récurrentes</div>
+      <div class="kpi-icon">🏢</div>
+      <div class="kpi-num">15</div>
+      <div class="kpi-label">clients actifs, secteurs privé et public</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-icon">🚀</div>
-      <div class="kpi-num">4–8</div>
-      <div class="kpi-label">semaines de délai moyen de mise en production</div>
+      <div class="kpi-icon">🏛</div>
+      <div class="kpi-num">4</div>
+      <div class="kpi-label">références publiques (collectivités & institutions)</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-icon">🎯</div>
-      <div class="kpi-num">+30</div>
-      <div class="kpi-label">projets livrés pour des PME et startups en France</div>
+      <div class="kpi-icon">💶</div>
+      <div class="kpi-num">180k€</div>
+      <div class="kpi-label">de chiffre d'affaires réalisé à ce jour</div>
     </div>
     <div class="kpi-card">
-      <div class="kpi-icon">💡</div>
-      <div class="kpi-num">3×</div>
-      <div class="kpi-label">plus rapide qu'un développement agence traditionnelle</div>
+      <div class="kpi-icon">📈</div>
+      <div class="kpi-num">432k€</div>
+      <div class="kpi-label">de chiffre d'affaires projeté pour 2026</div>
     </div>
   </div>
-  <p class="s7-note">* Moyennes constatées sur l'ensemble des projets livrés par Inkriz</p>
+  <!-- Growth bar -->
+  <div style="max-width:520px;width:100%;margin-top:28px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+      <div style="flex:1;text-align:center;">
+        <div style="font-size:.75rem;opacity:.6;margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;">Actuel</div>
+        <div style="background:rgba(255,255,255,.18);border-radius:8px 8px 0 0;height:60px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;">
+          <span style="font-size:.82rem;font-weight:700;">180k€</span>
+        </div>
+      </div>
+      <div style="color:rgba(255,255,255,.4);font-size:1.4rem;margin-bottom:12px;">→</div>
+      <div style="flex:2.4;text-align:center;">
+        <div style="font-size:.75rem;opacity:.6;margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;">Projection 2026</div>
+        <div style="background:linear-gradient(to top,#A855F7,#C084FC);border-radius:8px 8px 0 0;height:140px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;box-shadow:0 0 24px rgba(168,85,247,.4);">
+          <span style="font-size:.82rem;font-weight:800;">432k€ <span style="font-size:.7rem;opacity:.8;">+140%</span></span>
+        </div>
+      </div>
+    </div>
+    <div style="height:2px;background:rgba(255,255,255,.12);border-radius:1px;"></div>
+  </div>
+</section>
+
+<!-- ── SLIDE 8 : RÉFÉRENCES PUBLIQUES ── -->
+<section class="slide" id="s7b" style="background:var(--cream);justify-content:center;align-items:center;padding:80px 5% 60px;">
+  <div style="text-align:center;margin-bottom:44px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(123,47,190,.1);color:var(--purple);font-size:.78rem;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px;">
+      🏛 Secteur public
+    </div>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:var(--purple-dark);letter-spacing:-1px;margin-bottom:10px;">Nos références institutionnelles</h2>
+    <p style="font-size:1rem;color:var(--text-light);max-width:520px;margin:0 auto;">Inkriz est déjà retenu par des collectivités et institutions publiques pour accélérer leur transformation digitale.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px;width:100%;">
+    <div style="background:white;border-radius:20px;padding:28px;border:1.5px solid rgba(123,47,190,.1);display:flex;gap:18px;align-items:center;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(123,47,190,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#1E3A5F,#2563EB);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🏔</div>
+      <div>
+        <div style="font-size:1rem;font-weight:800;color:var(--purple-dark);margin-bottom:4px;">La Plagne</div>
+        <div style="font-size:.82rem;color:var(--text-light);line-height:1.5;">Station de ski — Digitalisation des process de gestion et d'expérience visiteur</div>
+        <div style="display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;background:#EFF6FF;color:#2563EB;">Collectivité territoriale</div>
+      </div>
+    </div>
+    <div style="background:white;border-radius:20px;padding:28px;border:1.5px solid rgba(123,47,190,.1);display:flex;gap:18px;align-items:center;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(123,47,190,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#7C2D12,#DC2626);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🏛</div>
+      <div>
+        <div style="font-size:1rem;font-weight:800;color:var(--purple-dark);margin-bottom:4px;">CDG66</div>
+        <div style="font-size:.82rem;color:var(--text-light);line-height:1.5;">Centre de Gestion de la Fonction Publique des Pyrénées-Orientales — Automatisation RH et reporting</div>
+        <div style="display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;background:#FEF2F2;color:#DC2626;">Fonction publique</div>
+      </div>
+    </div>
+    <div style="background:white;border-radius:20px;padding:28px;border:1.5px solid rgba(123,47,190,.1);display:flex;gap:18px;align-items:center;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(123,47,190,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#14532D,#16A34A);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🏢</div>
+      <div>
+        <div style="font-size:1rem;font-weight:800;color:var(--purple-dark);margin-bottom:4px;">Mairie de Clichy</div>
+        <div style="font-size:.82rem;color:var(--text-light);line-height:1.5;">Commune des Hauts-de-Seine — Plateforme de gestion interne et digitalisation des services administratifs</div>
+        <div style="display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;background:#F0FDF4;color:#16A34A;">Mairie</div>
+      </div>
+    </div>
+    <div style="background:white;border-radius:20px;padding:28px;border:1.5px solid rgba(123,47,190,.1);display:flex;gap:18px;align-items:center;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(123,47,190,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#4C1D95,#7B2FBE);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;">🗳</div>
+      <div>
+        <div style="font-size:1rem;font-weight:800;color:var(--purple-dark);margin-bottom:4px;">Thomas Lam — Député</div>
+        <div style="font-size:.82rem;color:var(--text-light);line-height:1.5;">Assemblée Nationale — Outils de gestion de permanence, automatisation du suivi des dossiers constituants</div>
+        <div style="display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;background:#F3E8FF;color:#7B2FBE;">Institution nationale</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ── SLIDE 8 : POURQUOI INKRIZ ── -->
@@ -1484,7 +1581,7 @@ body {
       <div class="result-item">Zéro doublon sur les bons de commande</div>
       <div class="result-item">Déployé en 6 semaines, 12 utilisateurs actifs</div>
     </div>
-    <button class="platform-cta" onclick="goToSlide(13)">Projet similaire ? Parlons-en</button>
+    <button class="platform-cta" onclick="goToSlide(15)">Projet similaire ? Parlons-en</button>
   </div>
   <div class="platform-right">
     <div class="mockup">
@@ -1539,7 +1636,7 @@ body {
       <div class="result-item">Déclarations CA entièrement automatisées</div>
       <div class="result-item">ROI positif dès le 3e mois d'utilisation</div>
     </div>
-    <button class="platform-cta" onclick="goToSlide(13)">Discuter de votre projet</button>
+    <button class="platform-cta" onclick="goToSlide(15)">Discuter de votre projet</button>
   </div>
   <div class="platform-right">
     <div class="mockup">
@@ -1587,7 +1684,7 @@ body {
       <div class="result-item">Gestion des stocks et seuils minimum automatisée</div>
       <div class="result-item">Application mobile PWA disponible sur iOS et Android</div>
     </div>
-    <button class="platform-cta" onclick="goToSlide(13)">Démarrer un projet similaire</button>
+    <button class="platform-cta" onclick="goToSlide(15)">Démarrer un projet similaire</button>
   </div>
   <div class="platform-right">
     <div class="mockup" style="background:#0D1F0D;">
@@ -1801,7 +1898,7 @@ function getActiveSlide() {
 function updateUI(idx) {
   currentSlide = idx;
   // Nav dark on dark slides
-  const darkSlides = [0, 4, 6, 13];
+  const darkSlides = [0, 4, 6, 15];
   if (darkSlides.includes(idx)) {
     nav.classList.add('dark');
     label.classList.add('light');
@@ -1816,7 +1913,7 @@ function updateUI(idx) {
   // Nav active link
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   if (idx <= 4) document.querySelectorAll('.nav-link')[0].classList.add('active');
-  else if (idx <= 12) document.querySelectorAll('.nav-link')[1].classList.add('active');
+  else if (idx <= 14) document.querySelectorAll('.nav-link')[1].classList.add('active');
   else document.querySelectorAll('.nav-link')[2].classList.add('active');
   // Arrows
   document.getElementById('arrow-up').style.opacity   = idx === 0 ? '0.3' : '1';
