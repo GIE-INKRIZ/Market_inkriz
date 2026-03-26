@@ -1185,9 +1185,9 @@ body {
 }
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  max-width: 760px;
+  max-width: 520px;
   width: 100%;
   margin-bottom: 40px;
 }
@@ -1636,7 +1636,10 @@ body {
       <div class="result-item">Déclarations CA entièrement automatisées</div>
       <div class="result-item">ROI positif dès le 3e mois d'utilisation</div>
     </div>
-    <button class="platform-cta" onclick="goToSlide(15)">Discuter de votre projet</button>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <button class="platform-cta" onclick="goToSlide(15)">Discuter de votre projet</button>
+      <a href="https://procuris.fr/" target="_blank" style="font-size:.85rem;font-weight:700;color:var(--purple);text-decoration:none;display:flex;align-items:center;gap:5px;">Voir la plateforme ↗</a>
+    </div>
   </div>
   <div class="platform-right">
     <div class="mockup">
@@ -1684,7 +1687,10 @@ body {
       <div class="result-item">Gestion des stocks et seuils minimum automatisée</div>
       <div class="result-item">Application mobile PWA disponible sur iOS et Android</div>
     </div>
-    <button class="platform-cta" onclick="goToSlide(15)">Démarrer un projet similaire</button>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <button class="platform-cta" onclick="goToSlide(15)">Démarrer un projet similaire</button>
+      <a href="https://mon-voisin-lepicier.fr/" target="_blank" style="font-size:.85rem;font-weight:700;color:var(--purple);text-decoration:none;display:flex;align-items:center;gap:5px;">Voir la plateforme ↗</a>
+    </div>
   </div>
   <div class="platform-right">
     <div class="mockup" style="background:#0D1F0D;">
@@ -1747,7 +1753,7 @@ body {
     <div class="vitrine-card">
       <div class="vitrine-logo-area">🧺 <span style="font-size:.9rem;font-weight:800;color:var(--purple-dark);margin-left:6px;">Mon Voisin l'Épicier</span></div>
       <div class="vitrine-desc">Plateforme CE et site vitrine pour une épicerie de producteurs locaux. Intégration e-commerce et gestion des commandes.</div>
-      <a class="vitrine-link" href="#">Voir le site ↗</a>
+      <a class="vitrine-link" href="https://mon-voisin-lepicier.fr/" target="_blank">Voir le site ↗</a>
     </div>
     <div class="vitrine-card">
       <div class="vitrine-logo-area" style="font-family:serif;letter-spacing:1px;font-size:1rem;">Arom Island</div>
@@ -1844,15 +1850,10 @@ body {
       <div class="contact-item-label">Email</div>
       <div class="contact-item-value">hello@inkriz.fr</div>
     </div>
-    <div class="contact-item">
-      <div class="contact-item-icon">📅</div>
-      <div class="contact-item-label">Calendrier</div>
-      <div class="contact-item-value">inkriz.fr/rdv</div>
-    </div>
-    <div class="contact-item">
+    <div class="contact-item" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/company/107347889/','_blank')">
       <div class="contact-item-icon">💼</div>
       <div class="contact-item-label">LinkedIn</div>
-      <div class="contact-item-value">linkedin.com/company/inkriz</div>
+      <div class="contact-item-value">Inkriz — Suivez-nous</div>
     </div>
   </div>
   <div class="contact-ctas">
